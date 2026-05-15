@@ -155,6 +155,20 @@
     </div>
   </section>
 
+  <!-- EDITORIAL STRIP -->
+  <section class="strip" aria-hidden="true">
+    <figure class="strip__half strip__half--img">
+      <img src="assets/images/signing.jpg" alt="" loading="lazy" width="1400" height="900">
+    </figure>
+    <figure class="strip__half strip__half--quote">
+      <blockquote>
+        <span class="strip__mark">“</span>
+        <p data-i18n="strip.quote">Chaque facture est une promesse. Nous veillons à ce qu'elle soit tenue.</p>
+        <footer data-i18n="strip.cite">— Athalie &amp; Co</footer>
+      </blockquote>
+    </figure>
+  </section>
+
   <!-- SERVICES -->
   <section class="section" id="services">
     <div class="container">
@@ -221,7 +235,8 @@
   </section>
 
   <!-- APPROACH -->
-  <section class="section section--dark" id="approche">
+  <section class="section section--dark section--photo" id="approche" style="--bg-image: url('assets/images/palais-justice.jpg');">
+    <div class="section__bg" aria-hidden="true"></div>
     <div class="container approach__grid">
       <div>
         <p class="eyebrow eyebrow--light" data-i18n="approach.eyebrow">Notre approche</p>
@@ -303,14 +318,11 @@
         </dl>
       </div>
 
-      <figure class="team__visual" aria-hidden="true">
-        <div class="team__visual-inner">
-          <svg viewBox="0 0 300 360" class="team__mark">
-            <text x="150" y="240" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="500" font-size="320" fill="#0A0A0A">A</text>
-            <text x="218" y="280" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" font-size="86" fill="#C9A961">&amp;</text>
-          </svg>
-          <p class="team__caption">Business Consulting · Bruxelles</p>
-        </div>
+      <figure class="team__visual">
+        <img src="assets/images/team.jpg" alt="L'équipe Athalie & Co en réunion stratégique" loading="lazy" width="900" height="1300">
+        <figcaption class="team__caption">
+          <span data-i18n="team.caption">Une équipe trilingue au service de votre cycle de facturation.</span>
+        </figcaption>
       </figure>
     </div>
   </section>
@@ -418,7 +430,7 @@
   </div>
   <div class="container footer__bottom">
     <small>© <span id="year"></span> Athalie &amp; Co Business Consulting</small>
-    <small data-i18n="footer.crafted">Site conçu en Belgique · FR / NL / EN</small>
+    <small><span data-i18n="footer.crafted">Site conçu en Belgique · FR / NL / EN</span> · <a href="https://www.pexels.com" rel="noopener" target="_blank" style="color:inherit">Photos Pexels</a></small>
   </div>
 </footer>
 

@@ -30,6 +30,11 @@ window.I18N = {
 
     'trust.label': 'Conformité & cadre',
 
+    'strip.quote': "Chaque facture est une promesse. Nous veillons à ce qu'elle soit tenue.",
+    'strip.cite':  '— Athalie & Co',
+
+    'team.caption': 'Une équipe trilingue au service de votre cycle de facturation.',
+
     'services.eyebrow': 'Nos services',
     'services.title.l1': "Un accompagnement complet,",
     'services.title.l2': "du devis au paiement.",
@@ -152,6 +157,11 @@ window.I18N = {
 
     'trust.label': 'Compliance & kader',
 
+    'strip.quote': 'Elke factuur is een belofte. Wij zorgen ervoor dat zij wordt nagekomen.',
+    'strip.cite':  '— Athalie & Co',
+
+    'team.caption': 'Een drietalig team in dienst van uw facturatiecyclus.',
+
     'services.eyebrow': 'Onze diensten',
     'services.title.l1': 'Een volledige begeleiding,',
     'services.title.l2': 'van offerte tot betaling.',
@@ -273,6 +283,11 @@ window.I18N = {
     'hero.kpi.quote': 'A structured, discreet and deeply human approach to collections.',
 
     'trust.label': 'Compliance & framework',
+
+    'strip.quote': 'Every invoice is a promise. We make sure it is kept.',
+    'strip.cite':  '— Athalie & Co',
+
+    'team.caption': 'A trilingual team at the service of your invoicing cycle.',
 
     'services.eyebrow': 'Our services',
     'services.title.l1': 'End-to-end support,',
