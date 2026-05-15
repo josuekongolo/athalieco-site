@@ -70,6 +70,13 @@
     const setOpen = open => {
       toggle.setAttribute('aria-expanded', String(open));
       panel.hidden = !open;
+      document.body.classList.toggle('menu-open', open);
+      if (open) {
+        const firstLink = panel.querySelector('a');
+        if (firstLink) firstLink.focus({ preventScroll: true });
+      } else {
+        toggle.focus({ preventScroll: true });
+      }
     };
 
     toggle.addEventListener('click', () => {
@@ -78,6 +85,12 @@
 
     panel.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+      }
     });
 
     matchMedia('(min-width: 1025px)').addEventListener('change', e => {
