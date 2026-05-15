@@ -29,10 +29,10 @@ python3 -m http.server 8000
 
 | Élément | Fichier | Ligne |
 |---|---|---|
-| Email contact | `index.html` | `mailto:contact@athalieco.be` |
+| Email contact | `index.html` | `mailto:contact@athalieandco.be` |
 | Téléphone | `index.html` | `tel:+3220000000` |
 | Endpoint formulaire | `index.html` | `action="https://formspree.io/f/your-id"` |
-| Domaine | `CNAME` | `athalieco.be` |
+| Domaine | `CNAME` | `athalieandco.be` |
 | Sitemap / robots | `sitemap.xml`, `robots.txt` | URL absolue |
 
 **Formulaire de contact** : crée un compte gratuit sur [Formspree](https://formspree.io), [Web3Forms](https://web3forms.com) ou [Getform](https://getform.io), récupère ton ID, remplace `your-id` dans `index.html`.
@@ -60,41 +60,46 @@ Sur GitHub → **Settings → Pages** :
 
 URL provisoire : `https://<ton-user>.github.io/<ton-repo>/`
 
-### 3. Domaine personnalisé via Domeneshop
+### 3. Domaine personnalisé via OVH
 
-Le fichier `CNAME` contient déjà `athalieco.be` — modifie-le si ton domaine diffère, puis :
+Le fichier `CNAME` contient `athalieandco.be`.
 
-**a) DNS chez Domeneshop**
+**a) Pré-requis OVH**
 
-Connecte-toi à [domeneshop.no](https://domeneshop.no) → ton domaine → **DNS**.
+Sur [ovh.com Manager](https://www.ovh.com/manager/) → ton domaine `athalieandco.be` :
 
-Pour un **apex domain** (`athalieco.be`), ajoute 4 enregistrements A pointant vers GitHub Pages :
+1. Onglet **DNS servers** : assure-toi que le domaine utilise les serveurs DNS d'OVH (`dns112.ovh.net.` / `ns112.ovh.net.` ou similaire). Sinon le DNS Zone n'est pas autoritaire et tes modifications sont ignorées.
+2. Onglet **DNS zone** : **supprime** les enregistrements de parking OVH qui pointent vers `213.186.33.5` :
+   - `@ A 213.186.33.5`
+   - `www A 213.186.33.5`
+   - `@ TXT "1|www.athalieandco.be"` (redirection OVH par défaut)
+   - `www TXT "3|welcome"` (parking)
+3. **Conserve** : tous les `NS`, `SOA`, `MX` (Google Workspace), `SRV`, `_domainkey` (DKIM Mailchimp), `autoconfig`, `autodiscover`, `ftp`.
 
-| Type | Hostname | Valeur          | TTL  |
-|------|----------|-----------------|------|
-| A    | @        | 185.199.108.153 | 3600 |
-| A    | @        | 185.199.109.153 | 3600 |
-| A    | @        | 185.199.110.153 | 3600 |
-| A    | @        | 185.199.111.153 | 3600 |
+**b) Ajouter les enregistrements GitHub Pages**
 
-Et un CNAME pour le `www` :
+Mode expert OVH (« Add an entry » → format DNS direct, une ligne à la fois) :
 
-| Type  | Hostname | Valeur                          | TTL  |
-|-------|----------|---------------------------------|------|
-| CNAME | www      | `<ton-user>.github.io.`         | 3600 |
+```
+@ 3600 IN A 185.199.108.153
+@ 3600 IN A 185.199.109.153
+@ 3600 IN A 185.199.110.153
+@ 3600 IN A 185.199.111.153
+www 3600 IN CNAME josuekongolo.github.io.
+```
 
-> Si tu préfères ne servir que `www.athalieco.be`, garde uniquement le CNAME `www` et change `CNAME` du repo en `www.athalieco.be`.
+Le **point final** après `github.io.` est obligatoire (FQDN).
 
-**b) Côté GitHub**
+**c) Côté GitHub**
 
-- **Settings → Pages → Custom domain** : entre `athalieco.be` → Save
-- Coche **Enforce HTTPS** dès que la vérification DNS est validée (peut prendre quelques minutes à quelques heures)
+- **Settings → Pages → Custom domain** : `athalieandco.be` (déjà fait via API)
+- Coche **Enforce HTTPS** une fois la vérification DNS validée (5 min à 24h pour le certificat)
 
-**c) Vérification**
+**d) Vérification**
 
 ```bash
-dig athalieco.be +short      # doit retourner les 4 IP de GitHub
-dig www.athalieco.be +short  # doit retourner <ton-user>.github.io
+dig athalieandco.be +short      # doit retourner les 4 IP 185.199.108-111.153
+dig www.athalieandco.be +short  # doit retourner josuekongolo.github.io.
 ```
 
 ---

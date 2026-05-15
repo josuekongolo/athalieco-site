@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://athalieco.be/</loc>
-    <xhtml:link rel="alternate" hreflang="fr-be" href="https://athalieco.be/"/>
-    <xhtml:link rel="alternate" hreflang="nl-be" href="https://athalieco.be/?lang=nl"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://athalieco.be/?lang=en"/>
+    <loc>https://athalieandco.be/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-be" href="https://athalieandco.be/"/>
+    <xhtml:link rel="alternate" hreflang="nl-be" href="https://athalieandco.be/?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://athalieandco.be/?lang=en"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
