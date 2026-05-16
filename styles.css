@@ -833,6 +833,70 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
+   FAQ
+   Editorial accordion — native <details> for accessibility.
+   ============================================================ */
+
+.faq {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 880px;
+  border-top: 1px solid var(--line);
+}
+.faq__item { border-bottom: 1px solid var(--line); }
+
+.faq details {
+  position: relative;
+}
+.faq summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.6rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink);
+  transition: color var(--t-fast);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+';
+  flex-shrink: 0;
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--gold-deep);
+  line-height: 1;
+  margin-top: .1em;
+  transition: transform var(--t);
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq summary:hover { color: var(--gold-deep); }
+.faq details p {
+  margin: 0 0 1.8rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 70ch;
+  animation: faq-in 360ms cubic-bezier(.2,.7,.2,1);
+}
+@keyframes faq-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .faq summary { font-size: 1.05rem; padding: 1.2rem 0; gap: 1rem; }
+  .faq details p { font-size: .95rem; margin-bottom: 1.4rem; }
+}
+
+/* ============================================================
    TEAM / ABOUT
    ============================================================ */
 
@@ -1045,6 +1109,13 @@ a { color: inherit; text-decoration: none; }
   max-width: 32ch;
   margin: 1rem 0 0;
   color: var(--ink-mute);
+}
+.footer__geo {
+  font-size: .72rem !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep) !important;
+  margin-top: 1.2rem !important;
 }
 .site-footer h5 {
   font-size: .68rem;

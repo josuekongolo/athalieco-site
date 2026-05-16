@@ -6,19 +6,19 @@
     <xhtml:link rel="alternate" hreflang="fr-be" href="https://athalieandco.be/"/>
     <xhtml:link rel="alternate" hreflang="nl-be" href="https://athalieandco.be/?lang=nl"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://athalieandco.be/?lang=en"/>
-    <lastmod>2026-05-16</lastmod>
+    <lastmod>2026-05-16T11:30:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://athalieandco.be/privacy.html</loc>
-    <lastmod>2026-05-16</lastmod>
+    <lastmod>2026-05-16T11:30:00+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://athalieandco.be/terms.html</loc>
-    <lastmod>2026-05-16</lastmod>
+    <lastmod>2026-05-16T11:30:00+02:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

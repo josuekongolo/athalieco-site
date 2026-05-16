@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# Bad-actor scrapers (light deterrent)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
 Sitemap: https://athalieandco.be/sitemap.xml
+Host: https://athalieandco.be

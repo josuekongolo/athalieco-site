@@ -1,0 +1,15 @@
+{
+  "name": "Athalie & Co Business Consulting",
+  "short_name": "Athalie & Co",
+  "description": "Conseil en facturation et recouvrement de créances pour entreprises belges.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F3",
+  "theme_color": "#0A0A0A",
+  "lang": "fr-BE",
+  "scope": "/",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

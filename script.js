@@ -26,6 +26,16 @@
 
     document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : `${lang}-BE`);
 
+    // Update <title> and meta description per language (SEO)
+    if (dict['meta.title']) document.title = dict['meta.title'];
+    if (dict['meta.description']) {
+      let m = document.querySelector('meta[name="description"]');
+      if (m) m.setAttribute('content', dict['meta.description']);
+    }
+    // Update Open Graph locale
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_GB' : `${lang}_BE`);
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key] !== undefined) {
