@@ -1438,6 +1438,11 @@ a { color: inherit; text-decoration: none; }
   .page-hero > .container { grid-template-columns: 1fr !important; gap: 2rem; padding-inline: 0; }
   .page-hero__card { max-width: none; margin-inline: 0; width: 100%; border-radius: 0; }
 
+  /* Homepage hero — same edge-to-edge treatment */
+  .hero > .container { padding-inline: 0 !important; }
+  .hero__card { border-radius: 0; box-shadow: none; }
+  .hero__copy { padding-inline: 14px; }
+
   .clients__list { grid-template-columns: repeat(3, 1fr); row-gap: 2.4rem; max-width: 760px; }
   .client { min-height: 90px; }
   .client img { max-height: 70px; }
@@ -1646,12 +1651,18 @@ a { color: inherit; text-decoration: none; }
   .btn--link:hover { color: var(--ink); border-color: var(--ink); }
 }
 
-/* iOS safe-area */
+/* iOS safe-area — only applied on tablet+ where gutter still exists.
+   On mobile (<820px) we want true edge-to-edge so we skip the safe-area pad. */
 @supports (padding: max(0px)) {
-  .site-header,
-  .container {
+  .site-header {
     padding-left: max(var(--gutter), env(safe-area-inset-left));
     padding-right: max(var(--gutter), env(safe-area-inset-right));
+  }
+  @media (min-width: 821px) {
+    .container {
+      padding-left: max(var(--gutter), env(safe-area-inset-left));
+      padding-right: max(var(--gutter), env(safe-area-inset-right));
+    }
   }
   .site-footer { padding-bottom: max(1.6rem, env(safe-area-inset-bottom)); }
   .mobile-nav { padding-bottom: max(1.5rem, env(safe-area-inset-bottom)); }
