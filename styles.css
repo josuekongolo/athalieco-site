@@ -1375,7 +1375,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Tablet & small laptop */
 @media (max-width: 1024px) {
-  :root { --gutter: clamp(18px, 4vw, 36px); }
+  :root { --gutter: clamp(14px, 3.5vw, 28px); }
 
   .nav { display: none; }
   .header__inner {
@@ -1592,7 +1592,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Small phones (iPhone SE, etc.) */
 @media (max-width: 420px) {
-  :root { --gutter: 16px; }
+  :root { --gutter: 14px; }
 
   .brand__tag { display: none; }
   .brand__name { font-size: 1.05rem; }
