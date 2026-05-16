@@ -15,33 +15,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Analytics gtag.js -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y983EKCF2R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y983EKCF2R');
+  </script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Aller au contenu</a>
 
-<header class="site-header">
+<header class="site-header" id="top">
   <div class="container header__inner">
-    <a class="brand" href="/" aria-label="Athalie & Co">
+    <a class="brand" href="index.html" aria-label="Athalie & Co">
       <svg class="brand__mark" viewBox="0 0 200 200" aria-hidden="true">
         <text x="100" y="135" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="500" font-size="180">A</text>
         <text x="148" y="155" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" font-size="48" class="brand__amp">&amp;</text>
       </svg>
       <span class="brand__wordmark">
         <span class="brand__name">Athalie <span class="brand__amp-inline">&amp;</span> Co</span>
-        <span class="brand__tag">Business Consulting</span>
+        <span class="brand__tag" data-i18n="brand.tag">Business Consulting</span>
       </span>
     </a>
     <nav class="nav" aria-label="Primary">
       <ul>
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#approche">Approche</a></li>
-        <li><a href="/#equipe">Équipe</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+        <li><a href="blog/" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </nav>
     <div class="header__aside">
-      <a class="btn btn--ghost btn--sm" href="/#contact">Prendre rendez-vous</a>
+      <a class="header__cta" href="contact.html" aria-label="Réserver un rendez-vous">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span data-i18n="nav.book">Réserver un RDV</span>
+      </a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
     </div>
     <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -49,12 +66,12 @@
   </div>
   <div class="mobile-nav" id="mobile-nav" hidden>
     <ul>
-      <li><a href="/#services">Services</a></li>
-      <li><a href="/#approche">Approche</a></li>
-      <li><a href="/#equipe">Équipe</a></li>
-      <li><a href="/#contact">Contact</a></li>
+      <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
+      <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+      <li><a href="blog/" data-i18n="nav.blog">Blog</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <a class="btn btn--gold btn--block" href="/#contact">Prendre rendez-vous</a>
+    <a class="btn btn--gold btn--block" href="contact.html" data-i18n="nav.cta">Prendre rendez-vous</a>
   </div>
 </header>
 
@@ -226,12 +243,42 @@
 </main>
 
 <footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <span class="brand__name">Athalie <span class="brand__amp-inline">&amp;</span> Co</span>
+      <p data-i18n="footer.tag">Conseil en facturation et recouvrement de créances pour les entreprises belges.</p>
+      <p class="footer__geo" data-i18n="footer.geo">Bonheiden · Malines · Anvers · Bruxelles · Flandre &amp; Wallonie · Luxembourg</p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <h5 data-i18n="footer.nav">Navigation</h5>
+      <a href="about.html" data-i18n="nav.about">À propos</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="blog/" data-i18n="nav.blog">Blog</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="footer__legal">
+      <h5 data-i18n="footer.legal">Légal</h5>
+      <a href="privacy.html" data-i18n="footer.privacy">Politique de confidentialité</a>
+      <a href="terms.html" data-i18n="footer.terms">Conditions générales</a>
+      <a href="privacy.html#cookies" data-i18n="footer.cookies">Cookies</a>
+    </div>
+    <div class="footer__meta">
+      <h5 data-i18n="footer.contact">Contact</h5>
+      <a href="mailto:contact@athalieandco.be">contact@athalieandco.be</a>
+      <a href="tel:+32488341352">+32 488 34 13 52</a>
+      <span>Imeldalaan 16</span>
+      <span>2820 Bonheiden · Belgique</span>
+      <a href="https://www.linkedin.com/in/anne-françoise-mabiala/" rel="noopener" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
   <div class="container footer__bottom">
-    <small>© <span id="year"></span> Athalie &amp; Co Business Consulting · TVA BE 1031.017.750</small>
-    <small><a href="terms.html">Conditions générales</a> · <a href="privacy.html">Confidentialité</a></small>
+    <small>© <span id="year"></span> Athalie &amp; Co Business Consulting · <span data-i18n="footer.vat">TVA</span> BE 1031.017.750</small>
+    <small><span data-i18n="footer.crafted">Site conçu en Belgique · FR / NL / EN</span> · <a href="https://www.pexels.com" rel="noopener" target="_blank" style="color:inherit">Photos Pexels</a></small>
   </div>
 </footer>
 
+<script src="i18n.js" defer></script>
+<script src="script.js" defer></script>
 <script src="cookie-banner.js" defer></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>

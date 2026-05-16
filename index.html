@@ -178,6 +178,15 @@
     ]
   }
   </script>
+
+  <!-- Google Analytics gtag.js -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y983EKCF2R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y983EKCF2R');
+  </script>
 </head>
 <body>
 
@@ -185,7 +194,7 @@
 
 <header class="site-header" id="top">
   <div class="container header__inner">
-    <a class="brand" href="#top" aria-label="Athalie & Co">
+    <a class="brand" href="/" aria-label="Athalie & Co">
       <svg class="brand__mark" viewBox="0 0 200 200" aria-hidden="true">
         <text x="100" y="135" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="500" font-size="180">A</text>
         <text x="148" y="155" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="500" font-size="48" class="brand__amp">&amp;</text>
@@ -198,22 +207,23 @@
 
     <nav class="nav" aria-label="Primary">
       <ul>
-        <li><a href="#services" data-i18n="nav.services">Services</a></li>
-        <li><a href="#approche" data-i18n="nav.approach">Approche</a></li>
-        <li><a href="#secteurs" data-i18n="nav.sectors">Secteurs</a></li>
-        <li><a href="#equipe" data-i18n="nav.team">Équipe</a></li>
-        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+        <li><a href="blog/" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </nav>
 
     <div class="header__aside">
+      <a class="header__cta" href="contact.html" aria-label="Réserver un rendez-vous">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span data-i18n="nav.book">Réserver un RDV</span>
+      </a>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="fr" aria-pressed="true">FR</button>
         <button type="button" data-lang="nl" aria-pressed="false">NL</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="btn btn--ghost btn--sm" href="#contact" data-i18n="nav.cta">Prendre rendez-vous</a>
     </div>
 
     <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
@@ -223,13 +233,12 @@
 
   <div class="mobile-nav" id="mobile-nav" hidden>
     <ul>
-      <li><a href="#services" data-i18n="nav.services">Services</a></li>
-      <li><a href="#approche" data-i18n="nav.approach">Approche</a></li>
-      <li><a href="#secteurs" data-i18n="nav.sectors">Secteurs</a></li>
-      <li><a href="#equipe" data-i18n="nav.team">Équipe</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
+      <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+      <li><a href="blog/" data-i18n="nav.blog">Blog</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <a class="btn btn--gold btn--block" href="#contact" data-i18n="nav.cta">Prendre rendez-vous</a>
+    <a class="btn btn--gold btn--block" href="contact.html" data-i18n="nav.cta">Prendre rendez-vous</a>
   </div>
 </header>
 
@@ -248,7 +257,7 @@
           Nous aidons les PME et grandes entreprises à structurer leur cycle de facturation et à récupérer leurs créances impayées — avec rigueur, discrétion et résultats mesurables.
         </p>
         <div class="hero__cta">
-          <a class="btn btn--gold" href="#contact" data-i18n="hero.cta1">Demander un diagnostic</a>
+          <a class="btn btn--gold" href="contact.html" data-i18n="hero.cta1">Demander un diagnostic</a>
           <a class="btn btn--link" href="#services" data-i18n="hero.cta2">Découvrir nos services →</a>
         </div>
         <ul class="hero__pills" aria-label="Languages">
@@ -347,6 +356,7 @@
             <li data-i18n="svc1.b2">Analyse du DSO &amp; balance âgée</li>
             <li data-i18n="svc1.b3">Plan d'action priorisé</li>
           </ul>
+          <a class="service__cta" href="services.html#audit" data-i18n="svc.cta">Voir le détail →</a>
         </article>
 
         <article class="service">
@@ -358,6 +368,7 @@
             <li data-i18n="svc2.b2">CGV adaptées B2B / B2C</li>
             <li data-i18n="svc2.b3">Intégration Peppol &amp; ERP</li>
           </ul>
+          <a class="service__cta" href="services.html#conformite" data-i18n="svc.cta">Voir le détail →</a>
         </article>
 
         <article class="service service--featured">
@@ -369,6 +380,7 @@
             <li data-i18n="svc3.b2">Médiation et plans de paiement</li>
             <li data-i18n="svc3.b3">Préservation de la relation client</li>
           </ul>
+          <a class="service__cta service__cta--light" href="services.html#amiable" data-i18n="svc.cta">Voir le détail →</a>
           <span class="service__badge" data-i18n="svc3.badge">Cœur de métier</span>
         </article>
 
@@ -381,72 +393,13 @@
             <li data-i18n="svc4.b2">Suivi des dossiers contentieux</li>
             <li data-i18n="svc4.b3">Reporting transparent</li>
           </ul>
+          <a class="service__cta" href="services.html#judiciaire" data-i18n="svc.cta">Voir le détail →</a>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- APPROACH -->
-  <section class="section section--dark section--photo" id="approche" style="--bg-image: url('assets/images/palais-justice.jpg');">
-    <div class="section__bg" aria-hidden="true"></div>
-    <div class="container approach__grid">
-      <div>
-        <p class="eyebrow eyebrow--light" data-i18n="approach.eyebrow">Notre approche</p>
-        <h2 class="display display--sm display--light">
-          <span data-i18n="approach.title.l1">Rigueur d'un cabinet,</span>
-          <em data-i18n="approach.title.l2">finesse d'un partenaire.</em>
-        </h2>
-        <p class="section__lede section__lede--light" data-i18n="approach.lede">
-          Chez Athalie &amp; Co, le recouvrement n'est jamais une rupture. C'est un dialogue, mené dans la langue du client, qui préserve votre image et vos relations commerciales.
-        </p>
-      </div>
-
-      <ol class="steps">
-        <li>
-          <span class="steps__num">I</span>
-          <h4 data-i18n="step1.t">Écouter</h4>
-          <p data-i18n="step1.b">Comprendre votre contexte, votre clientèle, vos contraintes sectorielles.</p>
-        </li>
-        <li>
-          <span class="steps__num">II</span>
-          <h4 data-i18n="step2.t">Diagnostiquer</h4>
-          <p data-i18n="step2.b">Mesurer, cartographier, identifier les zones de fuite de cash.</p>
-        </li>
-        <li>
-          <span class="steps__num">III</span>
-          <h4 data-i18n="step3.t">Agir</h4>
-          <p data-i18n="step3.b">Déployer les procédures et activer le recouvrement, en votre nom.</p>
-        </li>
-        <li>
-          <span class="steps__num">IV</span>
-          <h4 data-i18n="step4.t">Pérenniser</h4>
-          <p data-i18n="step4.b">Former vos équipes, transmettre les outils, sécuriser les acquis.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- SECTORS -->
-  <section class="section" id="secteurs">
-    <div class="container">
-      <header class="section__head section__head--center">
-        <p class="eyebrow" data-i18n="sectors.eyebrow">Secteurs accompagnés</p>
-        <h2 class="display display--sm">
-          <span data-i18n="sectors.title">Une expertise transversale, ancrée en Belgique.</span>
-        </h2>
-      </header>
-
-      <ul class="sectors">
-        <li><span>01</span><strong data-i18n="sec1">PME &amp; ETI</strong><em data-i18n="sec1d">Services, conseil, agences</em></li>
-        <li><span>02</span><strong data-i18n="sec2">Immobilier</strong><em data-i18n="sec2d">Syndics, agences, promoteurs</em></li>
-        <li><span>03</span><strong data-i18n="sec3">Santé &amp; bien-être</strong><em data-i18n="sec3d">Cliniques, praticiens, mutuelles</em></li>
-        <li><span>04</span><strong data-i18n="sec4">Construction</strong><em data-i18n="sec4d">Entrepreneurs, architectes</em></li>
-        <li><span>05</span><strong data-i18n="sec5">E-commerce &amp; retail</strong><em data-i18n="sec5d">B2C, marketplaces</em></li>
-        <li><span>06</span><strong data-i18n="sec6">Professions libérales</strong><em data-i18n="sec6d">Avocats, notaires, comptables</em></li>
-      </ul>
-    </div>
-  </section>
 
   <!-- FAQ -->
   <section class="section" id="faq">
@@ -505,120 +458,22 @@
     </div>
   </section>
 
-  <!-- TEAM / ABOUT -->
-  <section class="section section--cream" id="equipe">
-    <div class="container team__grid">
-      <div class="team__copy">
-        <p class="eyebrow" data-i18n="team.eyebrow">L'équipe</p>
-        <h2 class="display display--sm">
-          <span data-i18n="team.title.l1">Trilingues.</span>
-          <em data-i18n="team.title.l2">Discrètes. Précises.</em>
-        </h2>
-        <p data-i18n="team.body1">
-          Athalie &amp; Co réunit des consultantes formées au droit commercial belge, à la comptabilité d'entreprise et à la psychologie de la négociation. Chaque dossier est traité dans la langue du débiteur — français, néerlandais ou anglais — pour maximiser le taux de recouvrement et préserver votre marque.
-        </p>
-        <p data-i18n="team.body2">
-          Notre engagement : aucune sous-traitance offshore, aucun script agressif. Le recouvrement se gagne par la clarté, la persévérance et la connaissance du cadre légal.
-        </p>
 
-        <dl class="facts">
-          <div><dt data-i18n="team.f1">Langues</dt><dd>FR · NL · EN</dd></div>
-          <div><dt data-i18n="team.f2">Couverture</dt><dd data-i18n="team.f2v">Belgique · Luxembourg · France</dd></div>
-          <div><dt data-i18n="team.f3">Discrétion</dt><dd data-i18n="team.f3v">NDA standard sur chaque mission</dd></div>
-        </dl>
+  <!-- CTA strip → contact page -->
+  <section class="section section--dark">
+    <div class="container" style="text-align:center;max-width:680px">
+      <p class="eyebrow eyebrow--light" data-i18n="hcta.eyebrow">Prendre contact</p>
+      <h2 class="display display--sm display--light">
+        <span data-i18n="hcta.title.l1">Parlons de vos créances —</span>
+        <em data-i18n="hcta.title.l2">en toute confidentialité.</em>
+      </h2>
+      <p class="section__lede section__lede--light" data-i18n="hcta.lede" style="margin-inline:auto">
+        Premier échange offert, 30 minutes, sous NDA si nécessaire. Réponse sous 24h ouvrées.
+      </p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn--gold" href="contact.html" data-i18n="hcta.primary">Nous contacter</a>
+        <a class="btn btn--link" style="color:var(--gold)" href="tel:+32488341352" data-i18n="hcta.secondary">+32 488 34 13 52 →</a>
       </div>
-
-      <figure class="team__visual">
-        <img src="assets/images/team.jpg" alt="L'équipe Athalie & Co en réunion stratégique" loading="lazy" width="900" height="1300">
-        <figcaption class="team__caption">
-          <span data-i18n="team.caption">Une équipe trilingue au service de votre cycle de facturation.</span>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section section--dark" id="contact">
-    <div class="container contact__grid">
-      <div>
-        <p class="eyebrow eyebrow--light" data-i18n="contact.eyebrow">Prendre contact</p>
-        <h2 class="display display--sm display--light">
-          <span data-i18n="contact.title.l1">Parlons de vos créances —</span>
-          <em data-i18n="contact.title.l2">en toute confidentialité.</em>
-        </h2>
-        <p class="section__lede section__lede--light" data-i18n="contact.lede">
-          Premier échange offert, 30 minutes, sous NDA si nécessaire. Nous revenons vers vous sous 24 heures ouvrées.
-        </p>
-
-        <ul class="contact__list">
-          <li>
-            <span data-i18n="contact.email">Email</span>
-            <a href="mailto:contact@athalieandco.be">contact@athalieandco.be</a>
-          </li>
-          <li>
-            <span data-i18n="contact.phone">Téléphone</span>
-            <a href="tel:+32488341352">+32 488 34 13 52</a>
-          </li>
-          <li>
-            <span data-i18n="contact.address">Adresse</span>
-            <address>Imeldalaan 16<br>2820 Bonheiden · Belgique</address>
-          </li>
-          <li>
-            <span data-i18n="contact.hours">Horaires</span>
-            <em data-i18n="contact.hoursv">Lun–Ven · 9h00 – 18h00</em>
-          </li>
-          <li>
-            <span data-i18n="contact.linkedin">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/anne-françoise-mabiala/" rel="noopener" target="_blank">Anne-Françoise Mabiala</a>
-          </li>
-          <li>
-            <span data-i18n="contact.vat">TVA</span>
-            <em>BE 1031.017.750</em>
-          </li>
-        </ul>
-      </div>
-
-      <form class="form" action="https://formsubmit.co/contact@athalieandco.be" method="POST" novalidate>
-        <input type="hidden" name="_subject" value="Nouvelle demande — Athalie &amp; Co">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="true">
-        <input type="hidden" name="_next" value="https://athalieandco.be/?sent=1">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="field">
-          <label for="f-name" data-i18n="form.name">Nom complet</label>
-          <input id="f-name" name="name" type="text" required autocomplete="name">
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="f-email" data-i18n="form.email">Email professionnel</label>
-            <input id="f-email" name="email" type="email" required autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="f-company" data-i18n="form.company">Entreprise</label>
-            <input id="f-company" name="company" type="text" autocomplete="organization">
-          </div>
-        </div>
-        <div class="field">
-          <label for="f-subject" data-i18n="form.subject">Sujet</label>
-          <select id="f-subject" name="subject">
-            <option data-i18n="form.subj1">Audit de facturation</option>
-            <option data-i18n="form.subj2">Recouvrement amiable</option>
-            <option data-i18n="form.subj3">Recouvrement judiciaire</option>
-            <option data-i18n="form.subj4">Formation / accompagnement</option>
-            <option data-i18n="form.subj5">Autre</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-msg" data-i18n="form.message">Décrivez brièvement votre situation</label>
-          <textarea id="f-msg" name="message" rows="5" required></textarea>
-        </div>
-        <label class="consent">
-          <input type="checkbox" required>
-          <span data-i18n="form.consent">J'accepte que mes données soient traitées conformément à la politique de confidentialité (RGPD).</span>
-        </label>
-        <button class="btn btn--gold btn--block" type="submit" data-i18n="form.submit">Envoyer la demande</button>
-        <p class="form__note" data-i18n="form.note">Réponse sous 24h ouvrées · Échange confidentiel</p>
-      </form>
     </div>
   </section>
 
@@ -633,11 +488,10 @@
     </div>
     <nav class="footer__nav" aria-label="Footer">
       <h5 data-i18n="footer.nav">Navigation</h5>
-      <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#approche" data-i18n="nav.approach">Approche</a>
-      <a href="#secteurs" data-i18n="nav.sectors">Secteurs</a>
-      <a href="#equipe" data-i18n="nav.team">Équipe</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="about.html" data-i18n="nav.about">À propos</a>
+      <a href="services.html" data-i18n="nav.services">Services</a>
+      <a href="blog/" data-i18n="nav.blog">Blog</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="footer__legal">
       <h5 data-i18n="footer.legal">Légal</h5>

@@ -1,0 +1,6 @@
+Drop your intro video here as:
+- intro.mp4 (H.264, recommended 1920x1080, max 20MB)
+- intro.webm (VP9, optional, fallback for Firefox)
+
+The video player on /about.html will pick it up automatically.
+While missing, the player shows the poster image (brussels.jpg).

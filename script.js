@@ -139,6 +139,49 @@
     els.forEach(el => io.observe(el));
   }
 
+  /* ---------- CONTACT TABS ---------- */
+  function initContactTabs() {
+    const tabs = document.querySelectorAll('.contact__tab');
+    const panels = document.querySelectorAll('.contact__panel');
+    if (!tabs.length) return;
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        tabs.forEach(t => {
+          const active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', String(active));
+        });
+        panels.forEach(p => { p.hidden = p.dataset.panel !== target; });
+      });
+    });
+  }
+
+  /* ---------- CONTACT FORM — light UX polish, native submit ---------- */
+  function initContactForm() {
+    const form = document.querySelector('form.form[action*="formsubmit.co"]');
+    if (!form) return;
+    // Just disable the submit button on click to prevent double-submission.
+    // The form submits natively to FormSubmit, which handles the redirect to _next.
+    form.addEventListener('submit', () => {
+      const submit = form.querySelector('button[type="submit"]');
+      if (submit) {
+        submit.disabled = true;
+        submit.textContent = 'Envoi en cours…';
+      }
+    });
+  }
+
+  /* ---------- SUBJECT PRE-FILL FROM ?subject= ---------- */
+  function initSubjectPrefill() {
+    const subj = new URLSearchParams(location.search).get('subject');
+    if (!subj) return;
+    const select = document.getElementById('f-subject');
+    if (!select) return;
+    const opt = [...select.options].find(o => o.value.toLowerCase() === subj.toLowerCase());
+    if (opt) opt.selected = true;
+  }
+
   /* ---------- FOOTER YEAR ---------- */
   function initYear() {
     const y = document.getElementById('year');
@@ -151,6 +194,9 @@
     initMobileNav();
     initHeaderScroll();
     initReveal();
+    initContactTabs();
+    initContactForm();
+    initSubjectPrefill();
     initYear();
   }
   if (document.readyState === 'loading') {
