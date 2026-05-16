@@ -28,6 +28,7 @@ window.I18N = {
     'hero.kpi3suffix': '+ ans',
     'hero.kpi.quote': "Une approche structurée, discrète et profondément humaine du recouvrement.",
 
+    'clients.label': 'Ils nous font confiance',
     'trust.label': 'Conformité & cadre',
 
     'strip.quote': "Chaque facture est une promesse. Nous veillons à ce qu'elle soit tenue.",
@@ -106,6 +107,11 @@ window.I18N = {
     'contact.address': 'Adresse',
     'contact.hours': 'Horaires',
     'contact.hoursv': 'Lun–Ven · 9h00 – 18h00',
+    'contact.linkedin': 'LinkedIn',
+    'contact.vat': 'TVA',
+
+    'hero.kpi.cite': '— Client PME, Belgique',
+    'footer.vat': 'TVA',
 
     'form.name': 'Nom complet',
     'form.email': 'Email professionnel',
@@ -155,6 +161,7 @@ window.I18N = {
     'hero.kpi3suffix': '+ jaar',
     'hero.kpi.quote': 'Een gestructureerde, discrete en diep menselijke aanpak van inning.',
 
+    'clients.label': 'Zij vertrouwen op ons',
     'trust.label': 'Compliance & kader',
 
     'strip.quote': 'Elke factuur is een belofte. Wij zorgen ervoor dat zij wordt nagekomen.',
@@ -233,6 +240,11 @@ window.I18N = {
     'contact.address': 'Adres',
     'contact.hours': 'Openingsuren',
     'contact.hoursv': 'Ma–Vr · 9u00 – 18u00',
+    'contact.linkedin': 'LinkedIn',
+    'contact.vat': 'BTW',
+
+    'hero.kpi.cite': '— Kmo-klant, België',
+    'footer.vat': 'BTW',
 
     'form.name': 'Volledige naam',
     'form.email': 'Zakelijk e-mailadres',
@@ -282,6 +294,7 @@ window.I18N = {
     'hero.kpi3suffix': '+ yrs',
     'hero.kpi.quote': 'A structured, discreet and deeply human approach to collections.',
 
+    'clients.label': 'Trusted by',
     'trust.label': 'Compliance & framework',
 
     'strip.quote': 'Every invoice is a promise. We make sure it is kept.',
@@ -360,6 +373,11 @@ window.I18N = {
     'contact.address': 'Address',
     'contact.hours': 'Hours',
     'contact.hoursv': 'Mon–Fri · 9:00 – 18:00',
+    'contact.linkedin': 'LinkedIn',
+    'contact.vat': 'VAT',
+
+    'hero.kpi.cite': '— SME client, Belgium',
+    'footer.vat': 'VAT',
 
     'form.name': 'Full name',
     'form.email': 'Work email',

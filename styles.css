@@ -152,6 +152,7 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--ink);
   position: relative;
   overflow: hidden;
+  isolation: isolate; /* contains the negative z-index of ::before */
 }
 .btn--gold::before {
   content: '';
@@ -159,9 +160,8 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(90deg, var(--gold) 0%, var(--gold-deep) 100%);
   transform: translateY(101%);
   transition: transform var(--t);
-  z-index: 0;
+  z-index: -1; /* sits under text without needing a wrapping span */
 }
-.btn--gold > * { position: relative; z-index: 1; }
 .btn--gold:hover::before { transform: translateY(0); }
 .btn--gold:hover { color: var(--ink); border-color: var(--gold); }
 
@@ -461,47 +461,101 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   TRUST STRIP
+   CLIENTS / TRUSTED BY
+   Restrained wordmarks — uniform typography, monochrome.
+   Slots are <span> placeholders; swap to <img src="..."> when
+   official logo files are available (drop in assets/clients/).
    ============================================================ */
 
-.trust {
+.clients {
   background: var(--cream);
-  padding: 2rem 0;
+  padding: clamp(3.6rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.trust__row {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-}
-.trust__label {
-  font-size: .7rem;
-  letter-spacing: 0.22em;
+.clients__label {
+  text-align: center;
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold-deep);
+  margin: 0 0 2.8rem;
   font-weight: 500;
+}
+.clients__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vw, 3rem);
+  align-items: center;
+  justify-items: center;
+}
+.client {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  padding: 0 .4rem;
+  opacity: 0.72;
+  filter: saturate(0);
+  transition: opacity var(--t), filter var(--t);
+}
+.client:hover {
+  opacity: 1;
+  filter: saturate(1);
+}
+
+/* Real logo files (SVG/PNG in assets/clients/) */
+.client img {
+  max-width: 100%;
+  max-height: 88px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* Makes PNGs with white background blend cleanly on cream */
+  mix-blend-mode: multiply;
+}
+
+/* Text wordmark placeholders — uniform editorial treatment */
+.client__wordmark {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.15;
   white-space: nowrap;
 }
-.trust__list {
-  list-style: none; padding: 0; margin: 0;
-  display: flex; flex-wrap: wrap;
-  gap: 1rem 2.2rem;
-  flex: 1;
+.client__wordmark em {
+  font-style: italic;
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--gold-deep);
+  text-transform: none;
+  font-size: 1.1em;
+  letter-spacing: 0;
+  margin: 0 .15em;
 }
-.trust__list li {
-  font-size: .82rem;
-  color: var(--ink-mute);
-  letter-spacing: 0.02em;
-  position: relative;
+.client__wordmark sup {
+  font-size: 0.55em;
+  vertical-align: super;
+  color: var(--gold-deep);
 }
-.trust__list li::before {
-  content: '·';
-  color: var(--gold);
-  margin-right: 1rem;
-  font-weight: 700;
-}
-.trust__list li:first-child::before { display: none; }
+
+/* Subtle per-brand differentiation (still text-based, restrained) */
+.client__wordmark--bnp { font-weight: 600; letter-spacing: 0.22em; }
+.client__wordmark--fortis { font-family: var(--serif); font-weight: 500; letter-spacing: 0.12em; }
+.client__wordmark--blake { font-family: var(--serif); font-weight: 500; letter-spacing: 0.08em; text-transform: none; }
+.client__wordmark--diasorin { font-weight: 600; letter-spacing: 0.14em; }
+.client__wordmark--360 { letter-spacing: 0.14em; }
+.client__wordmark--leopad { letter-spacing: 0.22em; }
+.client__wordmark--muidatech { font-weight: 500; letter-spacing: 0.14em; }
 
 /* ============================================================
    SECTIONS — base
@@ -1059,6 +1113,10 @@ a { color: inherit; text-decoration: none; }
   .display--sm { font-size: clamp(1.7rem, 6vw, 2.4rem); }
   .lede { font-size: 1rem; }
 
+  .clients__list { grid-template-columns: repeat(3, 1fr); row-gap: 2.4rem; max-width: 760px; }
+  .client { min-height: 90px; }
+  .client img { max-height: 70px; }
+
   .services { grid-template-columns: 1fr; }
   .sectors { grid-template-columns: 1fr 1fr; }
 
@@ -1136,15 +1194,14 @@ a { color: inherit; text-decoration: none; }
   .strip__mark { font-size: 4.5rem; }
   .strip__half--quote p { font-size: 1.3rem; }
 
-  /* Trust strip */
-  .trust { padding: 1.4rem 0; }
-  .trust__row { gap: .75rem; flex-direction: column; align-items: flex-start; }
-  .trust__list {
-    gap: .4rem 1rem;
-    margin: 0;
-  }
-  .trust__list li { font-size: .76rem; }
-  .trust__list li::before { margin-right: .6rem; }
+  /* Clients band */
+  .clients { padding: 2.6rem 0 3rem; }
+  .clients__list { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; gap: 1.4rem; max-width: 460px; }
+  .client { min-height: 80px; }
+  .client img { max-height: 60px; }
+  .client__wordmark { font-size: 0.95rem; letter-spacing: 0.18em; }
+
+  /* Trust strip removed */
 
   /* Sections */
   .section { padding: 3.5rem 0; }

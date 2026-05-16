@@ -37,6 +37,20 @@ python3 -m http.server 8000
 
 **Formulaire de contact** : crée un compte gratuit sur [Formspree](https://formspree.io), [Web3Forms](https://web3forms.com) ou [Getform](https://getform.io), récupère ton ID, remplace `your-id` dans `index.html`.
 
+### Logos clients
+
+La section « Ils nous font confiance » utilise pour l'instant des **wordmarks typographiques** (simple texte stylisé). Pour passer aux vrais logos :
+
+1. Récupère le logo officiel de chaque client (page « Press kit » / « Brand assets » de leur site, ou demande-leur directement).
+2. Dépose les fichiers dans `assets/clients/` — formats privilégiés : SVG monochrome (idéal), sinon PNG transparent haute résolution.
+3. Dans `index.html`, section `<section class="clients">`, remplace chaque `<span class="client__wordmark">…</span>` par :
+   ```html
+   <img src="assets/clients/bnp-paribas.svg" alt="BNP Paribas" loading="lazy">
+   ```
+4. Le CSS gère déjà la hauteur (`max-height: 38px`), le grisage automatique au repos et le retour à la couleur au survol.
+
+⚠️ **Droits** : afficher un logo client implique une relation commerciale. Si tu as réellement travaillé avec ces sociétés, c'est standard en B2B consulting, mais conserve une trace écrite (email, contrat) de leur accord tacite pour éviter toute contestation.
+
 ---
 
 ## Déploiement GitHub Pages
