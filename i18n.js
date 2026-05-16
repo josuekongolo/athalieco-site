@@ -74,8 +74,8 @@ window.I18N = {
     'svc2.b2': 'CGV adaptées B2B / B2C',
     'svc2.b3': 'Intégration Peppol & ERP',
 
-    'svc3.title': 'Recouvrement amiable',
-    'svc3.body':  "Prise en charge complète de vos créances impayées dans le respect strict de la loi belge du 4 mai 2023 — mise en demeure, négociation, plan d'apurement.",
+    'svc3.title': 'Recouvrement amiable de créances',
+    'svc3.body':  "Société de recouvrement nouvelle génération : nous prenons en charge vos factures impayées dans le respect strict de la loi belge du 4 mai 2023 — mise en demeure, négociation, plan d'apurement.",
     'svc3.b1': 'Relances multicanales FR/NL/EN',
     'svc3.b2': 'Médiation et plans de paiement',
     'svc3.b3': 'Préservation de la relation client',
@@ -149,7 +149,7 @@ window.I18N = {
     'form.note': 'Réponse sous 24h ouvrées · Échange confidentiel',
 
     'footer.tag': 'Conseil en facturation et recouvrement de créances pour les entreprises belges.',
-    'footer.geo': 'Bonheiden · Anvers · Bruxelles · Flandre & Wallonie · Luxembourg',
+    'footer.geo': 'Bonheiden · Malines · Anvers · Bruxelles · Flandre & Wallonie · Luxembourg',
     'footer.nav': 'Navigation',
     'footer.legal': 'Légal',
     'footer.contact': 'Contact',
@@ -229,8 +229,8 @@ window.I18N = {
     'svc2.b2': 'AV aangepast aan B2B / B2C',
     'svc2.b3': 'Peppol & ERP-integratie',
 
-    'svc3.title': 'Minnelijke invordering',
-    'svc3.body':  "Volledige opvolging van uw onbetaalde vorderingen in strikte naleving van de Belgische wet van 4 mei 2023 — ingebrekestelling, onderhandeling, afbetalingsplan.",
+    'svc3.title': 'Minnelijke invordering van vorderingen',
+    'svc3.body':  "Incassobureau van de nieuwe generatie: wij behandelen uw onbetaalde facturen in strikte naleving van de Belgische wet van 4 mei 2023 — ingebrekestelling, onderhandeling, afbetalingsplan.",
     'svc3.b1': 'Meertalige aanmaningen FR/NL/EN',
     'svc3.b2': 'Bemiddeling en betalingsplannen',
     'svc3.b3': 'Behoud van de klantrelatie',
@@ -304,7 +304,7 @@ window.I18N = {
     'form.note': 'Antwoord binnen 24 werkuren · Vertrouwelijk gesprek',
 
     'footer.tag': 'Advies in facturatie en invordering voor Belgische ondernemingen.',
-    'footer.geo': 'Bonheiden · Antwerpen · Brussel · Vlaanderen & Wallonië · Luxemburg',
+    'footer.geo': 'Bonheiden · Mechelen · Antwerpen · Brussel · Vlaanderen & Wallonië · Luxemburg',
     'footer.nav': 'Navigatie',
     'footer.legal': 'Juridisch',
     'footer.contact': 'Contact',
@@ -384,8 +384,8 @@ window.I18N = {
     'svc2.b2': 'T&Cs tailored to B2B / B2C',
     'svc2.b3': 'Peppol & ERP integration',
 
-    'svc3.title': 'Amicable collection',
-    'svc3.body':  "We take full ownership of your unpaid invoices in strict compliance with the Belgian act of 4 May 2023 — formal notice, negotiation, settlement plan.",
+    'svc3.title': 'Amicable debt collection',
+    'svc3.body':  "A next-generation debt-collection agency: we take full ownership of your unpaid invoices in strict compliance with the Belgian act of 4 May 2023 — formal notice, negotiation, settlement plan.",
     'svc3.b1': 'Multilingual reminders FR/NL/EN',
     'svc3.b2': 'Mediation & payment plans',
     'svc3.b3': 'Client relationship preserved',
@@ -459,7 +459,7 @@ window.I18N = {
     'form.note': 'Reply within one business day · Confidential exchange',
 
     'footer.tag': 'Invoicing and receivables consulting for Belgian companies.',
-    'footer.geo': 'Bonheiden · Antwerp · Brussels · Flanders & Wallonia · Luxembourg',
+    'footer.geo': 'Bonheiden · Mechelen · Antwerp · Brussels · Flanders & Wallonia · Luxembourg',
     'footer.nav': 'Navigation',
     'footer.legal': 'Legal',
     'footer.contact': 'Contact',
