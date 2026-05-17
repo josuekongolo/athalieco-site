@@ -231,15 +231,32 @@
     </button>
   </div>
 
-  <div class="mobile-nav" id="mobile-nav" hidden>
-    <ul>
-      <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
-      <li><a href="services.html" data-i18n="nav.services">Services</a></li>
-      <li><a href="blog/" data-i18n="nav.blog">Blog</a></li>
-      <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
-    </ul>
-    <a class="btn btn--gold btn--block" href="contact.html" data-i18n="nav.cta">Prendre rendez-vous</a>
-  </div>
+  <div class="mobile-nav__backdrop" hidden></div>
+  <aside class="mobile-nav" id="mobile-nav" hidden aria-label="Menu mobile">
+    <button type="button" class="mobile-nav__close" aria-label="Fermer le menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18"/>
+        <line x1="18" y1="6" x2="6" y2="18"/>
+      </svg>
+    </button>
+    <nav aria-label="Menu mobile principal">
+      <ul>
+        
+<li><a href="about.html" data-i18n="nav.about">À propos</a></li>        <li><a href="services.html" data-i18n="nav.services">Services</a></li>        <li><a href="blog/" data-i18n="nav.blog">Blog</a></li>        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-nav__lang" role="group" aria-label="Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <div class="mobile-nav__contact">
+      <a href="tel:+32488341352">+32 488 34 13 52</a>
+      <a href="mailto:contact@athalieandco.be">contact@athalieandco.be</a>
+      <a href="https://www.linkedin.com/in/anne-françoise-mabiala/" rel="noopener" target="_blank">LinkedIn ↗</a>
+    </div>
+    <a class="btn btn--gold btn--block mobile-nav__cta" href="contact.html" data-i18n="nav.book">Réserver un RDV</a>
+  </aside>
 </header>
 
 <main id="main">

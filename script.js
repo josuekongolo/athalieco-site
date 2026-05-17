@@ -47,7 +47,7 @@
       }
     });
 
-    document.querySelectorAll('.lang button').forEach(btn => {
+    document.querySelectorAll('.lang button, .mobile-nav__lang button').forEach(btn => {
       const active = btn.dataset.lang === lang;
       btn.setAttribute('aria-pressed', String(active));
     });
@@ -65,24 +65,32 @@
 
   /* ---------- INIT LANG ---------- */
   function initLang() {
-    document.querySelectorAll('.lang button').forEach(btn => {
+    document.querySelectorAll('.lang button, .mobile-nav__lang button').forEach(btn => {
       btn.addEventListener('click', () => applyLang(btn.dataset.lang));
     });
     applyLang(detectLang());
   }
 
-  /* ---------- MOBILE NAV ---------- */
+  /* ---------- MOBILE DRAWER ---------- */
   function initMobileNav() {
     const toggle = document.querySelector('.menu-toggle');
     const panel  = document.getElementById('mobile-nav');
+    const backdrop = document.querySelector('.mobile-nav__backdrop');
+    const closeBtn = panel ? panel.querySelector('.mobile-nav__close') : null;
     if (!toggle || !panel) return;
+
+    // Once initialized, drop the [hidden] attribute so CSS transitions can run.
+    // CSS still keeps the drawer off-screen via transform: translateX(100%).
+    panel.removeAttribute('hidden');
+    if (backdrop) backdrop.removeAttribute('hidden');
 
     const setOpen = open => {
       toggle.setAttribute('aria-expanded', String(open));
-      panel.hidden = !open;
+      panel.classList.toggle('is-open', open);
+      if (backdrop) backdrop.classList.toggle('is-open', open);
       document.body.classList.toggle('menu-open', open);
       if (open) {
-        const firstLink = panel.querySelector('a');
+        const firstLink = panel.querySelector('nav a');
         if (firstLink) firstLink.focus({ preventScroll: true });
       } else {
         toggle.focus({ preventScroll: true });
@@ -93,9 +101,12 @@
       setOpen(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    panel.querySelectorAll('a').forEach(a => {
+    // Close on link click (navigation), close button, backdrop click, ESC
+    panel.querySelectorAll('nav a, .mobile-nav__cta').forEach(a => {
       a.addEventListener('click', () => setOpen(false));
     });
+    if (closeBtn) closeBtn.addEventListener('click', () => setOpen(false));
+    if (backdrop) backdrop.addEventListener('click', () => setOpen(false));
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
