@@ -47,6 +47,12 @@
       }
     });
 
+    // data-i18n-html: same as data-i18n but preserves inline HTML (em/strong/br)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+
     document.querySelectorAll('.lang button, .mobile-nav__lang button').forEach(btn => {
       const active = btn.dataset.lang === lang;
       btn.setAttribute('aria-pressed', String(active));
